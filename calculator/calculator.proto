@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "github.com/craftizmv/calculator-app/calculator";
+
+package calculator;
+
+//The calculator service definition
+service Calculator {
+    //Api to add two numbers
+    rpc AddNumbers(RequestData) returns (ResponseData) {}
+
+    //Api to multiply two numbers
+    rpc MultiplyNumbers(RequestData) returns (ResponseData) {}
+}
+
+//The request data containing the numbers to be processed
+message RequestData {
+    int32 num1 = 1;
+    int32 num2 = 2;
+}
+
+//The response data containing the numbers to be returned to client
+message ResponseData {
+    int32 result = 1;
+}
+
